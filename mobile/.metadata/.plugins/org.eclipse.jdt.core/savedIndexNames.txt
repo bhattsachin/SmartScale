@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+/Users/bhatt/git/SmartScale/mobile/.metadata/.plugins/org.eclipse.jdt.core
+934734240.index
+471054709.index

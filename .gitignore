@@ -13,3 +13,11 @@ dist
 /.project
 /RUNNING_PID
 *.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+.meta/
+.metadata/
+

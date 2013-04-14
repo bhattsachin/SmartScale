@@ -3,6 +3,14 @@
 
 # --- !Ups
 
+create table bodyweight (
+  id                        varchar(255) not null,
+  weight                    double,
+  email                     varchar(255),
+  timestamp                 timestamp,
+  constraint pk_bodyweight primary key (id))
+;
+
 create table user (
   email_id                  varchar(255) not null,
   pass_word                 varchar(255),
@@ -26,6 +34,8 @@ create table userweight (
   constraint pk_userweight primary key (email_id))
 ;
 
+create sequence bodyweight_seq;
+
 create sequence user_seq;
 
 create sequence userdetails_seq;
@@ -39,6 +49,8 @@ create sequence userweight_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
+drop table if exists bodyweight;
+
 drop table if exists user;
 
 drop table if exists userdetails;
@@ -46,6 +58,8 @@ drop table if exists userdetails;
 drop table if exists userweight;
 
 SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists bodyweight_seq;
 
 drop sequence if exists user_seq;
 

@@ -1,13 +1,15 @@
 package controllers;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.Date;
 
-import model.User;
+import model.BodyWeight;
 import model.UserDetails;
 import model.UserWeight;
 import model.Util;
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
 
 public class Application extends Controller {
 
@@ -18,10 +20,9 @@ public class Application extends Controller {
 	}
 
 	public static Result createProfile() {
-		User.create("ubhacks@gmail.com", "AkcisRi", "Arnab", "Goswami");
-		//return bit("welcome to Smart weight");
-		return ok("ok");
-		
+		BodyWeight weight = new BodyWeight(new Double(65), "ubhack@gmail.com", Util.getCurrentTimeStamp());
+		weight.save();
+		return ok("added");
 	}
 
 	
@@ -39,8 +40,37 @@ public class Application extends Controller {
 	}
 
 	public static Result update(String weight) {
-		UserWeight.create("ubhacks@gmail.com",Util.getCurrentTimeStamp() , Long.parseLong(weight));
+		BodyWeight bd = new BodyWeight(Double.parseDouble(weight), "ubhacks@gmail.com",Util.getCurrentTimeStamp());
+		bd.save();
 		return ok("Weight updated");
+	}
+	
+	public static Result getConfiguration(){
+		return ok(views.html.configure.render());
+	}
+	
+	public static Result getToday(){
+		//generate random number every request
+		//generate a tip
+		double weight = (Math.random()*10 + 65);
+		String tip = null;
+		if(weight>70){
+			tip = "Exercise next week";
+		}else{
+			tip = "You are doing good";
+		}
+		DecimalFormat f = new DecimalFormat("00.0");
+		return ok(views.html.today.render(String.valueOf(f.format(weight)), tip));
+	}
+	
+	public static Result getProfile(){
+		
+		return ok(views.html.profile.render());
+	}
+	
+	public static Result getFeed(){
+		//feed page
+		return ok(views.html.feed.render());
 	}
 	
 	

@@ -2,6 +2,8 @@ package com.fitometer.fragments;
 
 
 
+import com.example.smartscale.R;
+
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,13 +22,13 @@ public class ConfigureFragment extends Fragment implements OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.about_fragment, container, false);
+		View v = inflater.inflate(R.layout.configure_fragment, container, false);
 		//RelativeLayout relate = (RelativeLayout) v.findViewById(R.id.relative_lay);
-		webview = (WebView) v.findViewById(R.id.videoview);
+		webView = (WebView) v.findViewById(R.id.configureWebView);
 
 		
 			
-		return null;
+		return v;
 		//return v;
 	}
 	
@@ -36,15 +38,16 @@ public class ConfigureFragment extends Fragment implements OnClickListener {
 		@Override
 		protected String doInBackground(String... arg0) {
 
+			String url = "http://www.google.com";
 			
-			
-			 return null;
+			 return url;
 		}
 
 		@Override
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
-		
+			webView.loadUrl(result);
+			
 			//webview.loadData(temp, "text/html", "utf-8");
 
 		}

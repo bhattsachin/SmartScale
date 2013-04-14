@@ -1,13 +1,14 @@
 package com.fitometer.fragments;
 
+
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 
 public class TodayFragment extends Fragment implements OnClickListener {
 
@@ -53,6 +54,7 @@ public class TodayFragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		
+
 	}
 
 }

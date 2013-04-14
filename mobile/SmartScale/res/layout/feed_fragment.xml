@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#ffffff" >
+    
+    <ImageView
+                android:id="@+id/feedbar"
+                     android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:adjustViewBounds= "true"
+           android:scaleType="centerCrop"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="0dp"
+          android:background="#ffcc00"
+                android:src="@drawable/feed_bar" />
+
+	    <WebView 
+	        android:id="@+id/feedView"
+	        android:layout_below="@+id/feedbar" 
+	      android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+       	android:layout_centerHorizontal="true" 
+       	android:layout_marginBottom="5dp"
+	     />
+    
+       
+    </RelativeLayout>

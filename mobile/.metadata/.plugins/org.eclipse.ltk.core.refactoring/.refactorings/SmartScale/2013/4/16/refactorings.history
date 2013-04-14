@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SmartScale/res/drawable-mdpi/popsplashscreen.jpg&apos; to &apos;splashscreen.jpg&apos;" description="Rename resource &apos;popsplashscreen.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/drawable-mdpi/popsplashscreen.jpg" name="splashscreen.jpg" stamp="1365905465919" updateReferences="true"/>
+</session>
